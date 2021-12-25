@@ -1,2 +1,2 @@
 # Bootstap-Projects
-Project to practice bootstrap.
+Projects to practice bootstrap.
