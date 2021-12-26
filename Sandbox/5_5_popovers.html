@@ -147,26 +147,74 @@
       <!--##################START HERE####################-->
 
       <!-- POPOVER -->
-      <button class="btn btn-danger">Toggle popover</button>
+      <button
+        class="btn btn-danger"
+        data-bs-toggle="popover"
+        data-bs-placement="top"
+        data-bs-content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio,
+        molestias!"
+      >
+        Toggle popover
+      </button>
 
-      <button class="btn btn-primary">Toggle popover</button>
+      <button
+        class="btn btn-primary"
+        data-bs-toggle="popover"
+        data-bs-placement="right"
+        data-bs-content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio,
+        molestias!"
+      >
+        Toggle popover
+      </button>
 
-      <button class="btn btn-warning">Toggle popover</button>
+      <button
+        class="btn btn-warning"
+        data-bs-toggle="popover"
+        data-bs-placement="bottom"
+        data-bs-content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio,
+        molestias!"
+      >
+        Toggle popover
+      </button>
 
-      <button class="btn btn-info">Toggle popover</button>
+      <button
+        class="btn btn-info"
+        data-bs-toggle="popover"
+        data-bs-placement="right"
+        data-bs-content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio,
+        molestias!"
+      >
+        Toggle popover
+      </button>
 
       <br />
       <br />
 
       <!-- DISMISSIBLE POPOVER -->
-      <button class="btn btn-primary">Toggle popover</button>
+      <button
+        id="hello"
+        class="btn btn-primary"
+        data-bs-toggle="popover"
+        data-bs-placement="left"
+        data-bs-content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio,
+        molestias!"
+        data-bs-trigger="focus"
+      >
+        Toggle popover
+      </button>
 
       <hr />
 
       <!-- CONTROL WITH JS -->
-      <button class="btn btn-secondary">Show Popover</button>
-      <button class="btn btn-secondary">Hide Popover</button>
-      <button class="btn btn-secondary">Toggle Popover</button>
+      <button class="btn btn-secondary" onclick="showPopover()">
+        Show Popover
+      </button>
+      <button class="btn btn-secondary" onclick="hidePopover()">
+        Hide Popover
+      </button>
+      <button class="btn btn-secondary" onclick="togglePopover()">
+        Toggle Popover
+      </button>
     </div>
 
     <div style="margin-top: 500px"></div>
@@ -181,6 +229,31 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
-    <script></script>
+    <script>
+      // Init popovers
+      var popoverTriggerList = [].slice.call(
+        document.querySelectorAll('[data-bs-toggle="popover"]')
+      );
+      var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl);
+      });
+
+      const btn = document.getElementById('hello');
+      const popover = new bootstrap.Popover(btn);
+      // Show popover
+      function showPopover() {
+        popover.show();
+      }
+
+      // Hide popover
+      function hidePopover() {
+        popover.hide();
+      }
+
+      // Toggle popover
+      function togglePopover() {
+        popover.toggle();
+      }
+    </script>
   </body>
 </html>
