@@ -88,3 +88,21 @@ body {
 #icon-boxes i {
   font-size: 50px;
 }
+
+#services i {
+  font-size: 30px;
+}
+
+#faq .card {
+  border: #444;
+}
+
+#faq a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#faq .card-body,
+#faq .card-header {
+  background: #333
+}
